@@ -1,0 +1,205 @@
+html, body {
+	height: 100%
+}
+html #wrapper, body #wrapper {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5746673669) 0%, rgba(0, 0, 0, 0.5046393557) 55%), url(../img/sky.jpg) no-repeat center/cover;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	font-family: "Quicksand", sans-serif
+}
+
+
+html #wrapper #current-time-date, body #wrapper #current-time-date {
+	background-color: rgba(0, 0, 0, 0.37);
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 270px;
+	height: auto;
+	padding: 0 10px 10px 10px;
+	color: #fff;
+	border-radius: 3px
+}
+html #wrapper #current-time-date .spinner-border, body #wrapper #current-time-date .spinner-border {
+	position: relative;
+	top: -15px;
+	left: 10px
+}
+html #wrapper #current-time-date h1, html #wrapper #current-time-date p, body #wrapper #current-time-date h1, body #wrapper #current-time-date p {
+	margin: 0
+}
+html #wrapper #current-time-date .row-date, body #wrapper #current-time-date .row-date {
+	justify-content: center
+}
+html #wrapper #current-time-date .row-date h3, body #wrapper #current-time-date .row-date h3 {
+	color: #a2a2a2;
+	margin-top: 4%;
+	font-size: 1.2rem
+}
+html #wrapper #current-time-date .row-time h1, body #wrapper #current-time-date .row-time h1 {
+	font-size: 3rem
+}
+html #wrapper #current-time-date .row-time .after::after, body #wrapper #current-time-date .row-time .after::after {
+	content: ':';
+	position: relative;
+	left: 12px;
+	top: -7px;
+	font-size: 2rem;
+	color: #a2a2a2
+}
+html #wrapper #current-time-date .row-time-title p, body #wrapper #current-time-date .row-time-title p {
+	font-size: .8rem;
+	color: #a2a2a2
+}
+html #wrapper #content, body #wrapper #content {
+	display: flex;
+	width: 80%;
+	min-height: auto;
+	position: relative;
+	top: -25%;
+	color: #fff
+}
+html #wrapper #content .container .row, body #wrapper #content .container .row {
+	justify-content: center
+}
+html #wrapper #content .container #current-location, html #wrapper #content .container #current-main, html #wrapper #content .container #current-about, body #wrapper #content .container #current-location, body #wrapper #content .container #current-main, body #wrapper #content .container #current-about {
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+html #wrapper #content .container #current-location, body #wrapper #content .container #current-location {
+	color: #8492ff
+}
+html #wrapper #content .container #current-location .fa-thumbtack, body #wrapper #content .container #current-location .fa-thumbtack {
+	font-size: 1.5rem;
+	margin-right: 2%;
+	position: relative;
+	top: 3px
+}
+html #wrapper #content .container #current-location span, body #wrapper #content .container #current-location span {
+	font-size: 2rem
+}
+html #wrapper #content .container #current-main, body #wrapper #content .container #current-main {
+	font-size: 2rem
+}
+html #wrapper #content .container #current-main .wi-night-sleet, body #wrapper #content .container #current-main .wi-night-sleet {
+	font-size: 1.8rem
+}
+html #wrapper #content .container #current-main i, body #wrapper #content .container #current-main i {
+	margin: 0 2%;
+	color: #fff
+}
+html #wrapper #content .container #current-main #current-temp, body #wrapper #content .container #current-main #current-temp {
+	margin-right: 2%;
+	color: #fff;
+	font-size: 3.5rem
+}
+html #wrapper #content .container #current-main .wi-celsius, body #wrapper #content .container #current-main .wi-celsius {
+	margin: 0;
+	position: relative;
+	top: -10px;
+	font-size: 2.5rem
+}
+html #wrapper #content .container #current-main .wi-thermometer-internal, body #wrapper #content .container #current-main .wi-thermometer-internal {
+	position: relative;
+	top: 13px;
+	right: 9px;
+	font-size: 1.5rem;
+	margin: 0
+}
+html #wrapper #content .container #current-about .current-about-text, body #wrapper #content .container #current-about .current-about-text {
+	color: #fff;
+	font-size: 1.9rem
+}
+html #wrapper #content .container #parameters .row, body #wrapper #content .container #parameters .row {
+	font-size: 1.3rem
+}
+html #box, body #box {
+	width: 100%;
+	min-height: 150px;
+	position: absolute;
+	bottom: 10%
+}
+html #box .card, body #box .card {
+	border-radius: 8px;
+	color: #fff;
+	min-height: 170px;
+	padding: 0;
+	margin: 5px;
+	background-color: rgba(255, 255, 255, 0.21)
+}
+html #box .card .card-body, body #box .card .card-body {
+	padding: 1rem 2rem 2rem 2rem;
+	position: relative
+}
+html #box .card .card-body .row, body #box .card .card-body .row {
+	display: flex
+}
+html #box .card .card-body .daily-date, body #box .card .card-body .daily-date {
+	position: relative;
+	top: 10px;
+	left: -3%;
+	justify-content: flex-end
+}
+html #box .card .card-body .daily-date h5, body #box .card .card-body .daily-date h5 {
+	margin: 1% 0
+}
+html #box .card .card-body .daily-icon, body #box .card .card-body .daily-icon {
+	display: block;
+	width: 80px;
+	text-align: center;
+	font-size: 3rem;
+	margin-bottom: 2%;
+	position: relative;
+	top: -20px
+}
+html #box .card .card-body .daily-max-min, body #box .card .card-body .daily-max-min {
+	align-items: center;
+	padding: 0 10%
+}
+html #box .card .card-body .daily-max-min .max-temp, body #box .card .card-body .daily-max-min .max-temp {
+	font-size: 1.7rem;
+	margin: 0 8px 0 0
+}
+html #box .card .card-body .daily-max-min .left, body #box .card .card-body .daily-max-min .left {
+	position: relative;
+	top: 2px;
+	left: -5px;
+	font-size: 2rem
+}
+html #box .card .card-body .daily-max-min .right, body #box .card .card-body .daily-max-min .right {
+	font-size: 1.6rem;
+	position: relative;
+	left: 5px
+}
+html #box .card .card-body .daily-max-min .min-temp, body #box .card .card-body .daily-max-min .min-temp {
+	font-size: 1.2rem;
+	margin: 0;
+	margin-left: 12%
+}
+html #box .card .card-body .daily-max-min .vertical-line, body #box .card .card-body .daily-max-min .vertical-line {
+	width: 1px;
+	height: 18px;
+	position: relative;
+	left: 7px;
+	background-color: rgba(0, 0, 0, 0.21)
+}
+html #box .card .card-body .daily-about-text, body #box .card .card-body .daily-about-text {
+	margin-top: 2%;
+	padding: 0 10%;
+	justify-content: flex-start
+}
+html #box .card .card-body .daily-about-text .about-weather, body #box .card .card-body .daily-about-text .about-weather {
+	margin-top: 2%;
+	font-size: 1.2rem
+}
+html #box .card:nth-child(1), body #box .card:nth-child(1) {
+	background-color: #2b344d
+}
+html #box .card:hover, body #box .card:hover {
+	background-color: #2b344d;
+	transition: .3s
+}
