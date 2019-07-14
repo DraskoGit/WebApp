@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Drasko Aleksic">
+    <title>Weather App</title>
+    <!-- CSS LIBRARIES -->
+    <link rel="stylesheet" href="css/weather-icons.min.css">
+    <link rel="stylesheet" href="css/weather-icons-wind.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--    font-awesome-->
+    <script src="https://kit.fontawesome.com/1226a13116.js"></script>
+    <!-- google-fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
+    <!-- bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- wrapper -->
+    <section id="wrapper">
+
+        <!-- current-time-date -->
+        <div id="current-time-date" class="shadow">
+            <div class="row m-0 row-date">
+                <h3> <span id="day"></span>&nbsp;<span id="numbDay">&nbsp;</span>&nbsp;<span id="month">&nbsp;</span>&nbsp;<span id="year"></span></h3>
+            </div>
+            <div class="row row-time m-0 justify-content-center">
+                <div class="col-sm-4">
+                    <h1 class="after" id="hours">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </h1>
+                </div>
+                <div class="col-sm-4">
+                    <h1 class="after" id="minutes">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </h1>
+                </div>
+                <div class="col-sm-4">
+                    <h1 id="seconds">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </h1>
+                </div>
+            </div>
+            <div class="row row-time-title m-0 justify-content-center">
+                <div class="col-sm-4">
+                    <p class="text-center">hours</p>
+                </div>
+                <div class="col-sm-4">
+                    <p class="text-center">minutes</p>
+                </div>
+                <div class="col-sm-4">
+                    <p class="text-center">seconds</p>
+                </div>
+            </div>
+        </div>
+        <!-- end current-time-date -->
+
+        <div id="content">
+            <div class="container">
+                <!--current-location-->
+                <div class="row m-0 p-0">
+                    <div class="col-md-10 mt-4" id="current-location">
+                        <i class="fas fa-thumbtack"></i>
+                        <span class="display-4" id="location">--</span>
+                    </div>
+                </div>
+                <!-- current-main-->
+                <div class="row m-0 p-0">
+                    <div class="col-md-10" id="current-main">
+                        <i id="icons"></i>
+                        <span id="current-temp">--</span>
+                        <i class="wi wi-celsius"></i>
+                        <i class="wi wi-thermometer-internal"></i>
+                    </div>
+                </div>
+                <!--current-about-->
+                <div class="row m-0 p-0">
+                    <div class="col-md-10" id="current-about">
+                        <h2 class="current-about-text">--</h2>
+                    </div>
+                </div>
+                <!--parameters-->
+                <div class="row m-0 p-0">
+                    <div class="col-md-8" id="parameters">
+                        <div class="row">
+                            <div class="col-6 text-right">
+                                <span class="min-temp-text">Min</span>
+                                <span id="current-temp-min">--</span>
+                                <i class="wi wi-celsius"></i>
+                            </div>
+                            <div class="col-6 text-left">
+                                <span class="max-temp-text">Max</span>
+                                <span id="current-temp-max">--</span>
+                                <i class="wi wi-celsius"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 text-right">
+                                <span class="current-wind-text">Wind</span>
+                                <i class="wi wi-windy"></i>
+                                <span class="current-wind">--</span>
+                            </div>
+                            <div class="col-6 text-left">
+                                <span class="current-clouds-text">Clouds</span>
+                                <span class="current-clouds">--</span>
+                                <i class="wi wi-cloudy"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 text-right">
+                                <span class="current-pressure-text">Barometer</span>
+                                <i class="wi wi-barometer"></i>
+                                <span class="current-pressure">--</span>
+                            </div>
+                            <div class="col-6 text-left">
+                                <span class="current-humidity-text">Humidity</span>
+                                <i class="wi wi-humidity"></i>
+                                <span class="current-humidity">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- daily-->
+        <div class="container p-0" id="box">
+            <div class="card-group">
+                <div class="card shadow" id="1">
+                    <div class="card-body">
+                        <div class="row daily-date">
+                            <h5 class="card-title"></h5>
+                        </div>
+                        <div class="row daily-icon">
+                            <i class="wi wi-night-sleet"></i>
+                        </div>
+                        <div class="row daily-max-min">
+                            <p class="card-text max-temp">30</p>
+                            <i class="wi wi-degrees left"></i>
+                            <span class="vertical-line"></span>
+                            <p class="card-text min-temp">22</p>
+                            <i class="wi wi-degrees right"></i>
+                        </div>
+                        <div class="row daily-about-text">
+                            <p class="card-text about-weather"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow" id="2">
+                    <div class="card-body">
+                        <div class="row daily-date">
+                            <h5 class="card-title"></h5>
+                        </div>
+                        <div class="row daily-icon">
+                            <i class="wi wi-night-sleet"></i>
+                        </div>
+                        <div class="row daily-max-min">
+                            <p class="card-text max-temp">30</p>
+                            <span class="vertical-line"></span>
+                            <p class="card-text min-temp">22</p>
+                        </div>
+                        <div class="row daily-about-text">
+                            <p class="card-text about-weather"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow" id="3">
+                    <div class="card-body">
+                        <div class="row daily-date">
+                            <h5 class="card-title"></h5>
+                        </div>
+                        <div class="row daily-icon">
+                            <i class="wi wi-night-sleet"></i>
+                        </div>
+                        <div class="row daily-max-min">
+                            <p class="card-text max-temp">30</p>
+                            <span class="vertical-line"></span>
+                            <p class="card-text min-temp">22</p>
+                        </div>
+                        <div class="row daily-about-text">
+                            <p class="card-text about-weather"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow" id="4">
+                    <div class="card-body">
+                        <div class="row daily-date">
+                            <h5 class="card-title"></h5>
+                        </div>
+                        <div class="row daily-icon">
+                            <i class="wi wi-night-sleet"></i>
+                        </div>
+                        <div class="row daily-max-min">
+                            <p class="card-text max-temp">30</p>
+                            <span class="vertical-line"></span>
+                            <p class="card-text min-temp">22</p>
+                        </div>
+                        <div class="row daily-about-text">
+                            <p class="card-text about-weather"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow" id="5">
+                    <div class="card-body">
+                        <div class="row daily-date">
+                            <h5 class="card-title"></h5>
+                        </div>
+                        <div class="row daily-icon">
+                            <i class="wi wi-night-sleet"></i>
+                        </div>
+                        <div class="row daily-max-min">
+                            <p class="card-text max-temp">30</p>
+                            <span class="vertical-line"></span>
+                            <p class="card-text min-temp">22</p>
+                        </div>
+                        <div class="row daily-about-text">
+                            <p class="card-text about-weather"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end daily -->
+    </section>
+    <!-- end wrapper -->
+
+
+    <!-- bootstrap js-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--custom js-->
+    <script src="javascript/moment.min.js"></script>
+    <script src="javascript/javascript.js"></script>
+</body>
+
+</html>
